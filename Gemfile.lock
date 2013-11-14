@@ -1,0 +1,24 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    coderay (1.1.0)
+    kramdown (1.2.0)
+    logutils (0.6.0)
+    markdown (1.1.1)
+      kramdown (>= 1.0.2)
+      props (>= 1.0.0)
+      textutils (>= 0.6.4)
+    mini_portile (0.5.2)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
+    props (1.0.3)
+    textutils (0.7.0)
+      logutils (~> 0.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  coderay
+  markdown
+  nokogiri
