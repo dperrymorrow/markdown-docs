@@ -1,295 +1,85 @@
-# Markdown: Basics
 
-## Paragraphs, Headers, Blockquotes ##
+## Phrase Emphasis
 
-A paragraph is simply one or more consecutive lines of text, separated
-by one or more blank lines. (A blank line is any line that looks like
-a blank line -- a line containing nothing but spaces or tabs is
-considered blank.) Normal paragraphs should not be indented with
-spaces or tabs.
-
-Markdown offers two styles of headers: *Setext* and *atx*.
-Setext-style headers for `<h1>` and `<h2>` are created by
-**underlining** with equal signs (`=`) and hyphens (`-`), respectively.
-To create an atx-style header, you put 1-6 hash marks (`#`) at the
-beginning of the line `--` the number of hashes equals the resulting
-HTML header level.
-
-Blockquotes are indicated using email-style `>` angle brackets.
-
-Markdown:
-
-    A First Level Header
-    ====================
-
-    A Second Level Header
-    ---------------------
-
-    Now is the time for all good men to come to
-    the aid of their country. This is just a
-    regular paragraph.
-
-    The quick brown fox jumped over the lazy
-    dog's back.
-
-    ### Header 3
-
-    > This is a blockquote.
-    >
-    > This is the second paragraph in the blockquote.
-    >
-    > ## This is an H2 in a blockquote
+    *italic*   **bold**
+    _italic_   __bold__
 
 
-Output:
+## Headers
 
-    <h1>A First Level Header</h1>
+    # Header 1
 
-    <h2>A Second Level Header</h2>
+    ## Header 2
 
-    <p>Now is the time for all good men to come to the aid of their country. This is just a regular paragraph.</p>
+    ###### Header 6
 
-    <p>The quick brown fox jumped over the lazy dog's back.</p>
+## Lists
 
-    <h3>Header 3</h3>
+Ordered, without paragraphs:
 
-    <blockquote>
-        <p>This is a blockquote.</p>
+    1.  Foo
+    2.  Bar
 
-        <p>This is the second paragraph in the blockquote.</p>
-
-        <h2>This is an H2 in a blockquote</h2>
-    </blockquote>
-
-
-
-### Phrase Emphasis ###
-
-Markdown uses asterisks and underscores to indicate spans of emphasis.
-
-Markdown:
-
-    Some of these words *are emphasized*.
-    Some of these words _are emphasized also_.
-
-    Use two asterisks for **strong emphasis**.
-    Or, if you prefer, __use two underscores instead__.
-
-Output:
-
-    <p>
-        Some of these words <em>are emphasized</em>.
-        Some of these words <em>are emphasized also</em>.
-    </p>
-
-    <p>
-        Use two asterisks for <strong>strong emphasis</strong>.
-        Or, if you prefer, <strong>use two underscores instead</strong>.
-    </p>
-
-
-
-## Lists ##
-
-Unordered (bulleted) lists use asterisks, pluses, and hyphens (`*`,
-`+`, and `-`) as list markers. These three markers are
-interchangable; this:
-
-    *   Candy.
-    *   Gum.
-    *   Booze.
-
-this:
-
-    +   Candy.
-    +   Gum.
-    +   Booze.
-
-and this:
-
-    -   Candy.
-    -   Gum.
-    -   Booze.
-
-all produce the same output:
-
-    <ul>
-        <li>Candy.</li>
-        <li>Gum.</li>
-        <li>Booze.</li>
-    </ul>
-
-Ordered (numbered) lists use regular numbers, followed by periods, as
-list markers:
-
-    1.  Red
-    2.  Green
-    3.  Blue
-
-Output:
-
-    <ol>
-        <li>Red</li>
-        <li>Green</li>
-        <li>Blue</li>
-    </ol>
-
-If you put blank lines between items, you'll get `<p>` tags for the
-list item text. You can create multi-paragraph list items by indenting
-the paragraphs by 4 spaces or 1 tab:
+Unordered, with paragraphs:
 
     *   A list item.
 
         With multiple paragraphs.
 
-    *   Another item in the list.
+    *   Bar
 
-Output:
+You can nest them:
 
-    <ul>
-        <li>
-            <p>A list item.</p>
-            <p>With multiple paragraphs.</p></li>
-        <li>
-            <p>Another item in the list.</p>
-        </li>
-    </ul>
+    *   Abacus
+        * answer
+    *   Bubbles
+        1.  bunk
+        2.  bupkis
+            * BELITTLER
+        3. burper
+    *   Cunning
 
+## Blockquotes
 
+    > Email-style angle brackets
+    > are used for blockquotes.
 
-### Links ###
+    > > And, they can be nested.
 
-Markdown supports two styles for creating links: *inline* and
-*reference*. With both styles, you use square brackets to delimit the
-text you want to turn into a link.
+    > #### Headers in blockquotes
+    >
+    > * You can quote a list.
+    > * Etc.
 
-Inline-style links use parentheses immediately after the link text.
-For example:
+## Links
 
-    This is an [example link](http://example.com/).
+    An [example](http://url.com/ "Title")
 
-Output:
+## Images
 
-    <p>
-        This is an <a href="http://example.com/">example link</a>.
-    </p>
+    ![alt text](/path/img.jpg )
 
-Optionally, you may include a title attribute in the parentheses:
+## Code Spans
 
-    This is an [example link](http://example.com/ "With a Title").
+    `<code>` spans are delimited
+    by backticks.
 
-Output:
+    You can include literal backticks
+    like `` `this` ``.
 
-    <p>
-        This is an <a href="http://example.com/" title="With a Title">example link</a>.
-    </p>
+## Horizontal Rules
 
-Reference-style links allow you to refer to your links by names, which
-you define elsewhere in your document:
+Three or more dashes or asterisks:
 
-    I get 10 times more traffic from [Google][1] than from
-    [Yahoo][2] or [MSN][3].
+    ---
 
-    [1]: http://google.com/        "Google"
-    [2]: http://search.yahoo.com/  "Yahoo Search"
-    [3]: http://search.msn.com/    "MSN Search"
+    * * *
 
-Output:
+    - - - -
 
-    <p>
-        I get 10 times more traffic from
-        <a href="http://google.com/" title="Google">Google</a>
-        than from
-        <a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a>
-        or
-        <a href="http://search.msn.com/" title="MSN Search">MSN</a>.
-    </p>
+## Manual Line Breaks
 
-The title attribute is optional. Link names may contain letters,
-numbers and spaces, but are *not* case sensitive:
+End a line with two or more spaces:
 
-    I start my morning with a cup of coffee and
-    [The New York Times][NY Times].
-
-    [ny times]: http://www.nytimes.com/
-
-Output:
-
-    <p>
-        I start my morning with a cup of coffee and
-        <a href="http://www.nytimes.com/">The New York Times</a>.
-    </p>
-
-
-### Images ###
-
-Image syntax is very much like link syntax.
-
-Inline (titles are optional):
-
-    ![alt text](/path/to/img.jpg "Title")
-
-Reference-style:
-
-    ![alt text][id]
-
-    [id]: /path/to/img.jpg "Title"
-
-Both of the above examples produce the same output:
-
-    <img src="/path/to/img.jpg" alt="alt text" title="Title" />
-
-
-
-### Code ###
-
-In a regular paragraph, you can create code span by wrapping text in
-backtick quotes. Any ampersands (`&`) and angle brackets (`<` or
-`>`) will automatically be translated into HTML entities. This makes
-it easy to use Markdown to write about HTML example code:
-
-    I strongly recommend against using any `<blink>` tags.
-
-    I wish SmartyPants used named entities like `&mdash;`
-    instead of decimal-encoded entites like `&#8212;`.
-
-Output:
-
-    <p>
-        I strongly recommend against using any
-        <code>&lt;blink&gt;</code> tags.
-    </p>
-
-    <p>
-        I wish SmartyPants used named entities like
-        <code>&amp;mdash;</code> instead of decimal-encoded
-        entites like <code>&amp;#8212;</code>.
-    </p>
-
-
-To specify an entire block of pre-formatted code, indent every line of
-the block by 4 spaces or 1 tab. Just like with code spans, `&`, `<`,
-and `>` characters will be escaped automatically.
-
-Markdown:
-
-    If you want your page to validate under XHTML 1.0 Strict,
-    you've got to put paragraph tags in your blockquotes:
-
-        <blockquote>
-            <p>For example.</p>
-        </blockquote>
-
-Output:
-
-    <p>
-        If you want your page to validate under XHTML 1.0 Strict, you've got to put paragraph tags in your blockquotes:
-    </p>
-
-    <pre>
-        <code>
-            &lt;blockquote&gt;
-            &lt;p&gt;For example.&lt;/p&gt;
-            &lt;/blockquote&gt;
-        </code>
-    </pre>
+    Roses are red,
+    Violets are blue.
